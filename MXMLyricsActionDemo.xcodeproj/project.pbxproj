@@ -432,6 +432,7 @@
 				61FAADB31A0108E10063206F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		61FAADB41A0108E10063206F /* Build configuration list for PBXNativeTarget "MXMLyricsActionDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +441,7 @@
 				61FAADB61A0108E10063206F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
