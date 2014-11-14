@@ -80,6 +80,18 @@
                                     <action selector="lyrics:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZYW-aO-5xh"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qif-af-VIl">
+                                <rect key="frame" x="276" y="431" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchStyleChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="2pG-i3-P2d"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Style" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l08-pl-vX7">
+                                <rect key="frame" x="279" y="402" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -90,6 +102,8 @@
                             <constraint firstItem="yaN-Hn-ttX" firstAttribute="top" secondItem="BZo-ca-AQW" secondAttribute="bottom" constant="8" id="7S2-Ga-Flt"/>
                             <constraint firstAttribute="centerY" secondItem="9gQ-J8-xQi" secondAttribute="centerY" constant="-141" id="Bj0-QZ-NR8"/>
                             <constraint firstItem="BZo-ca-AQW" firstAttribute="centerX" secondItem="yaN-Hn-ttX" secondAttribute="centerX" id="Btw-7j-Hi8"/>
+                            <constraint firstItem="l08-pl-vX7" firstAttribute="centerX" secondItem="KHe-Uy-268" secondAttribute="centerX" id="CHd-fc-o6G"/>
+                            <constraint firstItem="l08-pl-vX7" firstAttribute="top" secondItem="KHe-Uy-268" secondAttribute="bottom" constant="11" id="Cma-42-6Cl"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qyk-qY-17m" secondAttribute="bottom" constant="542" id="DQD-RW-sG6"/>
                             <constraint firstAttribute="centerX" secondItem="BZo-ca-AQW" secondAttribute="centerX" id="E33-SV-8cA"/>
                             <constraint firstItem="Uxd-Bp-s35" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Eir-LW-Y5p"/>
@@ -100,6 +114,8 @@
                             <constraint firstAttribute="centerX" secondItem="9gQ-J8-xQi" secondAttribute="centerX" id="OTa-Sr-e94"/>
                             <constraint firstAttribute="centerY" secondItem="Uxd-Bp-s35" secondAttribute="centerY" constant="172" id="uGZ-oj-djt"/>
                             <constraint firstItem="9gQ-J8-xQi" firstAttribute="top" secondItem="KHe-Uy-268" secondAttribute="bottom" constant="79" id="vlI-tq-mLK"/>
+                            <constraint firstItem="qif-af-VIl" firstAttribute="centerX" secondItem="l08-pl-vX7" secondAttribute="centerX" constant="0.5" id="vo1-zF-wdr"/>
+                            <constraint firstItem="qif-af-VIl" firstAttribute="top" secondItem="l08-pl-vX7" secondAttribute="bottom" constant="8" id="wWy-DP-s1b"/>
                             <constraint firstItem="KHe-Uy-268" firstAttribute="centerX" secondItem="yaN-Hn-ttX" secondAttribute="centerX" id="x5m-Vw-tg2"/>
                         </constraints>
                         <variation key="default">
@@ -117,6 +133,7 @@
                         <outlet property="album" destination="KHe-Uy-268" id="NfC-yH-tGR"/>
                         <outlet property="artWork" destination="Uxd-Bp-s35" id="BPQ-S0-TBb"/>
                         <outlet property="artist" destination="yaN-Hn-ttX" id="w68-tI-ccU"/>
+                        <outlet property="style" destination="l08-pl-vX7" id="YGy-si-0au"/>
                         <outlet property="titleTrack" destination="BZo-ca-AQW" id="FQm-XC-cxd"/>
                     </connections>
                 </viewController>

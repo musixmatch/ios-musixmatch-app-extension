@@ -9,23 +9,30 @@
 #import "MXMLyricsAction.h"
 
 // Available App Extension Actions
-NSString *const kUTTypeAppExtensionFindSongLyric = @"org.appextension.find-song-lyric";
+NSString *const kUTTypeAppExtensionFindSongLyric =  @"org.appextension.find-song-lyric";
 
 // Song Dictionary keys
-NSString *const MusixmatchExtensionTitle = @"title";
-NSString *const MusixmatchExtensionArtist = @"artist";
-NSString *const MusixmatchExtensionAlbum = @"album";
-NSString *const MusixmatchExtensionCoverArt = @"coverArt";
-NSString *const MusixmatchExtensionDuration = @"duration";
-NSString *const MusixmatchExtensionProgress = @"progress";
-NSString *const MusixmatchExtensionStartDate = @"startDate";
+NSString *const MusixmatchExtensionTitle =          @"title";
+NSString *const MusixmatchExtensionArtist =         @"artist";
+NSString *const MusixmatchExtensionAlbum =          @"album";
+NSString *const MusixmatchExtensionCoverArt =       @"coverArt";
+NSString *const MusixmatchExtensionDuration =       @"duration";
+NSString *const MusixmatchExtensionProgress =       @"progress";
+NSString *const MusixmatchExtensionStartDate =      @"startDate";
+
+// View Style
+NSString *const MusixmatchExtensionStatusBarStyle = @"statusBar";
+
+// Additional infos
+NSString *const MusixmatchExtensionHostBundleID =   @"hostBundle";
+
+NSString *musixmatchAppStoreURL = @"itms-apps://itunes.apple.com/app/id448278467";
 
 @interface MXMLyricsAction ()
-@property (nonatomic, assign) UIStatusBarStyle appStyle;
+
 @end
 
 @implementation MXMLyricsAction
-@synthesize appStyle;
 
 #pragma mark - Singleton
 
@@ -43,11 +50,29 @@ NSString *const MusixmatchExtensionStartDate = @"startDate";
 #pragma mark - Util
 
 - (BOOL)isSystemAppExtensionAPIAvailable {
+
 #ifdef __IPHONE_8_0
     return NSClassFromString(@"NSExtensionItem") != nil;
 #else
     return NO;
 #endif
+    
+}
+
+- (BOOL)isMusixmatchExtensionAvailable {
+    
+#ifdef __IPHONE_8_0
+    return [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"mxm-ext:"]];
+#else
+    return NO;
+#endif
+    
+}
+
+- (void)openStore {
+
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:musixmatchAppStoreURL]];
+    
 }
 
 #pragma mark - Lyrics action
@@ -78,6 +103,10 @@ NSString *const MusixmatchExtensionStartDate = @"startDate";
              forKey:MusixmatchExtensionDuration];
     [dict setObject:[NSDate date]
              forKey:MusixmatchExtensionStartDate];
+    [dict setObject:[NSNumber numberWithInt:[[UIApplication sharedApplication] statusBarStyle]]
+             forKey:MusixmatchExtensionStatusBarStyle];
+    [dict setObject:[[NSBundle mainBundle] bundleIdentifier]
+             forKey:MusixmatchExtensionHostBundleID];
     
     [self findLyricsForSong:dict
           forViewController:viewController
@@ -98,20 +127,20 @@ NSString *const MusixmatchExtensionStartDate = @"startDate";
         return;
     }
     
-#ifdef __IPHONE_8_0
+    if (![self isMusixmatchExtensionAvailable]) {
+        [self openStore];
+        return;
+    }
     
-    appStyle = [[UIApplication sharedApplication] statusBarStyle];
+#ifdef __IPHONE_8_0
     
     UIActivityViewController *activityViewController = [self activityViewControllerForItem:dict viewController:viewController sender:sender typeIdentifier:kUTTypeAppExtensionFindSongLyric];
     activityViewController.completionWithItemsHandler = ^(NSString *activityType, BOOL completed, NSArray *returnedItems, NSError *activityError) {
 
-        [[UIApplication sharedApplication] setStatusBarStyle:appStyle
-                                                    animated:YES];
     };
     
     [viewController presentViewController:activityViewController animated:YES completion:^{
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent
-                                                    animated:YES];
+
     }];
     
 #endif

@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     [[MPMusicPlayerController systemMusicPlayer] beginGeneratingPlaybackNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(nowPlayingItmeChanged:)
@@ -73,6 +73,33 @@
                                                          
                                                      }];
     }
+    
+}
+
+- (IBAction)switchStyleChanged:(id)sender {
+    
+    UISwitch *swtch = sender;
+    
+    [UIView animateWithDuration:0.4f
+                     animations:^{
+                         
+                         if (!swtch.isOn) {
+                             
+                             [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+                             titleTrack.textColor = artist.textColor = album.textColor = style.textColor = [UIColor blackColor];
+                             
+                             [self.view setBackgroundColor:[UIColor whiteColor]];
+                             
+                         }else {
+                             
+                             [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+                             titleTrack.textColor = artist.textColor = album.textColor = style.textColor = [UIColor whiteColor];
+                             
+                             [self.view setBackgroundColor:[UIColor colorWithWhite:0.1f alpha:1.0f]];
+                             
+                         }
+
+                     }];
     
 }
 

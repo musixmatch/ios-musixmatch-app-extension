@@ -30,6 +30,8 @@ FOUNDATION_EXPORT NSString *const MusixmatchExtensionStartDate; // NSDate
 
 + (MXMLyricsAction*)sharedExtension;
 
+- (BOOL)isSystemAppExtensionAPIAvailable;
+
 - (void)findLyricsForSongWithTitle:(NSString*)title
                             artist:(NSString*)artist
                              album:(NSString*)album

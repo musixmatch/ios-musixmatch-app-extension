@@ -17,6 +17,7 @@
     IBOutlet UILabel *titleTrack;
     IBOutlet UILabel *artist;
     IBOutlet UILabel *album;
+    IBOutlet UILabel *style;
     
     MPMediaPickerController *pickerController;
     
