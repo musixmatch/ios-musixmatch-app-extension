@@ -1,19 +1,18 @@
 # Musixmatch Lyrics Extension
 
-Welcome! With just a few lines of code, your app can access to the largest lyrics catalog in the world, enabling your users to:
+With just a few lines of code your app can access the world's largest lyrics catalog to provide a better experience to your users.
 
-1. See the now playing lyrics in time with the music.
-2. Read unlimited lyrics also without music.
-
-Empowering your users to use strong, unique passwords has never been easier. Let's get started!
+With the Musixmatch extension you can:
+1. See the synced lyrics for the now playing song in your app.
+2. Read the lyrics for any song directly from your app.
 
 ## App Extension in Action
 
 <a href="http://vimeo.com/111976590" target="_blank"><img src="http://cl.ly/ZFu9/Screen%20Shot%202015-01-12%20at%2014.53.35.png" width="500" height="889"></a>
 
-## Just Give Me the Code (TL;DR)
+## Just Give Me the Code
 
-You might be looking at this 13 KB README and think integrating with Musixmatch is very complicated. Nothing could be further from the truth!
+Integrating the Musixmatch extension is very easy, it's just 2 lines of code.
 
 If you're the type that just wants the code, here it is:
 
@@ -127,9 +126,5 @@ If you open up MXMLyricsAction.m and start poking around, you'll be interested i
 * [NSItemProvider](https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSItemProvider_Class/index.html#//apple_ref/doc/uid/TP40014351), [NSExtensionItem](https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/doc/uid/TP40014375), and [UIActivityViewController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIActivityViewController_Class/index.html#//apple_ref/doc/uid/TP40011976) class references.
 
 ## Contact Us
-
-<!---
-Contact us, please! We'd love to hear from you about how you integrated 1Password within your app, how we can further improve things, and add your app to [apps that integrate with 1Password](http://blog.agilebits.com/2013/04/03/ios-apps-1password-integrated-support/).
--->
 
 You can reach us at ios@musixmatch.com, or if you prefer, [@musixmatch_api](https://twitter.com/musixmatch_api) on Twitter.
