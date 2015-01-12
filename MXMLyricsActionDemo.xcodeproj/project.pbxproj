@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61B704A81A252DCA009E709E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B704A71A252DCA009E709E /* StoreKit.framework */; };
 		61FAAD941A0108E10063206F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61FAAD931A0108E10063206F /* main.m */; };
 		61FAAD971A0108E10063206F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61FAAD961A0108E10063206F /* AppDelegate.m */; };
 		61FAAD9A1A0108E10063206F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61FAAD991A0108E10063206F /* ViewController.m */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		61B704A71A252DCA009E709E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		61FAAD8E1A0108E10063206F /* MXMLyricsActionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MXMLyricsActionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61FAAD921A0108E10063206F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61FAAD931A0108E10063206F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61B704A81A252DCA009E709E /* StoreKit.framework in Frameworks */,
 				61FAADB81A010EFB0063206F /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,8 +72,9 @@
 		61FAAD851A0108E10063206F = {
 			isa = PBXGroup;
 			children = (
-				61FAADB91A011E270063206F /* MXMLyricsAction */,
 				61FAADB71A010EFB0063206F /* MediaPlayer.framework */,
+				61B704A71A252DCA009E709E /* StoreKit.framework */,
+				61FAADB91A011E270063206F /* MXMLyricsAction */,
 				61FAAD901A0108E10063206F /* MXMLyricsActionDemo */,
 				61FAADAA1A0108E10063206F /* MXMLyricsActionDemoTests */,
 				61FAAD8F1A0108E10063206F /* Products */,
@@ -315,7 +319,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -351,7 +355,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

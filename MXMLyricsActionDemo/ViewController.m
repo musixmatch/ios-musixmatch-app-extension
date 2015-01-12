@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[MPMusicPlayerController systemMusicPlayer] beginGeneratingPlaybackNotifications];
+    [[MPMusicPlayerController iPodMusicPlayer] beginGeneratingPlaybackNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(nowPlayingItmeChanged:)
                                                  name:MPMusicPlayerControllerNowPlayingItemDidChangeNotification
@@ -31,7 +31,7 @@
 
 - (void)updateView {
     
-    MPMediaItem *item = [[MPMusicPlayerController systemMusicPlayer] nowPlayingItem];
+    MPMediaItem *item = [[MPMusicPlayerController iPodMusicPlayer] nowPlayingItem];
     
     if (item) {
         titleTrack.text = item.title;
@@ -58,14 +58,14 @@
 
 - (IBAction)lyrics:(id)sender {
  
-    MPMediaItem *item = [[MPMusicPlayerController systemMusicPlayer] nowPlayingItem];
+    MPMediaItem *item = [[MPMusicPlayerController iPodMusicPlayer] nowPlayingItem];
 
     if (item) {
         [[MXMLyricsAction sharedExtension] findLyricsForSongWithTitle:item.title
                                                                artist:item.artist
                                                                 album:item.albumTitle
                                                               artWork:[item.artwork imageWithSize:artWork.frame.size]
-                                                      currentProgress:[[MPMusicPlayerController systemMusicPlayer] currentPlaybackTime]
+                                                      currentProgress:[[MPMusicPlayerController iPodMusicPlayer] currentPlaybackTime]
                                                         trackDuration:item.playbackDuration
                                                     forViewController:self
                                                                sender:sender
@@ -113,10 +113,10 @@
 
 - (void)mediaPicker:(MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection {
 
-    [[MPMusicPlayerController systemMusicPlayer] setQueueWithItemCollection:mediaItemCollection];
+    [[MPMusicPlayerController iPodMusicPlayer] setQueueWithItemCollection:mediaItemCollection];
     [mediaPicker dismissViewControllerAnimated:YES
                                     completion:^{
-                                        [[MPMusicPlayerController systemMusicPlayer] play];
+                                        [[MPMusicPlayerController iPodMusicPlayer] play];
                                     }];
     
 }

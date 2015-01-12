@@ -1,12 +1,18 @@
 //
 //  MusixmatchExtension.m
-//  Simple Track Playback
+//  MXMLyricsActionDemo
 //
 //  Created by Martino Bonfiglioli on 16/10/14.
-//  Copyright (c) 2014 Your Company. All rights reserved.
+//  Copyright (c) 2014 Musixmatch. All rights reserved.
 //
 
-#import "MXMLyricsAction.h"
+#import "MXMLyricsAction.h" 
+#import <StoreKit/StoreKit.h>
+
+// Empty string check macro
+#ifndef StringOrEmpty
+#define StringOrEmpty(A) ({ __typeof__(A) __a = (A); __a ? __a : @""; })
+#endif
 
 // Available App Extension Actions
 NSString *const kUTTypeAppExtensionFindSongLyric =  @"org.appextension.find-song-lyric";
@@ -26,9 +32,10 @@ NSString *const MusixmatchExtensionStatusBarStyle = @"statusBar";
 // Additional infos
 NSString *const MusixmatchExtensionHostBundleID =   @"hostBundle";
 
-NSString *musixmatchAppStoreURL = @"itms-apps://itunes.apple.com/app/id448278467";
+NSString *musixmatchAppStoreURL =   @"itms-apps://itunes.apple.com/app/id448278467";
+NSString *musixmatchAppStoreAppID = @"448278467";
 
-@interface MXMLyricsAction ()
+@interface MXMLyricsAction () < SKStoreProductViewControllerDelegate >
 
 @end
 
@@ -73,6 +80,21 @@ NSString *musixmatchAppStoreURL = @"itms-apps://itunes.apple.com/app/id448278467
 
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:musixmatchAppStoreURL]];
     
+}
+
+- (void)showAppStoreForMusixmatchFromViewController:(UIViewController*)controller {
+    
+    //Use the in-app StoreKit view if available (iOS 6) and imported. This works in the simulator.
+    if (NSStringFromClass([SKStoreProductViewController class]) != nil) {
+        
+        SKStoreProductViewController *storeViewController = [[SKStoreProductViewController alloc] init];
+        NSNumber *appId = [NSNumber numberWithInteger:musixmatchAppStoreAppID.integerValue];
+        [storeViewController loadProductWithParameters:@{SKStoreProductParameterITunesItemIdentifier:appId} completionBlock:nil];
+        storeViewController.delegate = self;
+        
+        [controller presentViewController:storeViewController animated:YES completion:nil];
+
+    }
 }
 
 #pragma mark - Lyrics action
@@ -124,10 +146,14 @@ NSString *musixmatchAppStoreURL = @"itms-apps://itunes.apple.com/app/id448278467
     
     if (![self isSystemAppExtensionAPIAvailable]) {
         NSLog(@"Failed to findLoginForURLString, system API is not available");
+        completion(nil);
         return;
     }
     
     if (![self isMusixmatchExtensionAvailable]) {
+        completion(nil);
+        [self showAppStoreForMusixmatchFromViewController:viewController];
+        return;
         [self openStore];
         return;
     }
@@ -171,6 +197,12 @@ NSString *musixmatchAppStoreURL = @"itms-apps://itunes.apple.com/app/id448278467
 #else
     return nil;
 #endif
+}
+
+#pragma mark - SKStoreProductViewController Delegate
+
+- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
+    [viewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
