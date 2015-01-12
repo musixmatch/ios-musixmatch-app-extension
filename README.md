@@ -111,11 +111,11 @@ Here an example:
 
 **StatusBar White**
 
-<img src="http://cl.ly/image/0o2w0x072K3i/IMG_1463.PNG" alt="StatusBar White" style="width:500;height:889">
+<img src="http://cl.ly/image/0o2w0x072K3i/IMG_1463.PNG" alt="StatusBar White" width="500" height="889">
 
 **StatusBar Black**
 
-<img src="http://cl.ly/image/0o2w0x072K3i/IMG_1464.PNG" alt="StatusBar Black" style="width:500;height:889">
+<img src="http://cl.ly/image/0o2w0x072K3i/IMG_1464.PNG" alt="StatusBar Black" width="500" height="889">
 
 ## References
 
