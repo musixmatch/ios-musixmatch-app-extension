@@ -103,8 +103,8 @@ Data needed in deep:
 
 As the Extension can't change the **Status Bar**, there are two possible view styles
 
-1. StatusBar Black
-2. StatusBar White
+1. StatusBar White
+2. StatusBar Black
 
 You can try the two different style by change the 'UISwitch' in the Demo App.
 Here an example:
