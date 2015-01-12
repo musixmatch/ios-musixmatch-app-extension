@@ -111,11 +111,11 @@ Here an example:
 
 **StatusBar White**
 
-![StatusBar White](http://cl.ly/image/1W1h3P3W3O3x/IMG_1463.PNG)
+<img src="http://cl.ly/image/0o2w0x072K3i/IMG_1463.PNG" alt="StatusBar White" style="width:500;height:889">
 
 **StatusBar Black**
 
-![StatusBar Black](http://cl.ly/image/0o2w0x072K3i/IMG_1464.PNG)
+<img src="http://cl.ly/image/0o2w0x072K3i/IMG_1464.PNG" alt="StatusBar Black" style="width:500;height:889">
 
 ## References
 
