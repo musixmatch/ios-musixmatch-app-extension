@@ -51,6 +51,8 @@ Just give to Musixmatch extension these datas:
 5. Current seek time
 6. Track duration
 
+You can open Musixmatch Extension from your app without any specific UI, it could be standard "Lyircs button" or if you need a specific Musixmatch logo contact us, infos are below.
+
 ### Add Musixmatch Files to Your Project
 
 Add the `MXMLyricsAction.h` and `MXMLyricsAction.m` to your project and import `MXMLyricsAction.h` in your view contoller that implements the action for the lyrics button.
