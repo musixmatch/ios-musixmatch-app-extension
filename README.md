@@ -3,8 +3,9 @@
 With just a few lines of code your app can access the world's largest lyrics catalog to provide a better experience to your users.
 
 With the Musixmatch extension you can:
-1. See the synced lyrics for the now playing song in your app
-2. Read the lyrics for any song directly from your app.
+
+ 1. See the synced lyrics for the now playing song in your app
+ 2. Read the lyrics for any song directly from your app.
 
 ## App Extension in Action
 
@@ -12,9 +13,7 @@ With the Musixmatch extension you can:
 
 ## Just Give Me the Code
 
-Integrating the Musixmatch extension is very easy, it's just 2 lines of code.
-
-If you're the type that just wants the code, here it is:
+Integrating the Musixmatch extension is very easy, just include the following files in your project.
 
 * [MXMLyricsAction.h](https://github.com/Musixmatchdev/musixmatch-app-extension/blob/master/MXMLyricsAction/MXMLyricsAction.h)
 * [MXMLyricsAction.m](https://github.com/Musixmatchdev/musixmatch-app-extension/blob/master/MXMLyricsAction/MXMLyricsAction.m)
