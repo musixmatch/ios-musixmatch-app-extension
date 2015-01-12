@@ -60,7 +60,7 @@ Add the `MXMLyricsAction.h` and `MXMLyricsAction.m` to your project and import `
 Add lyrics button on your view, you can enable it by check `isSystemAppExtensionAPIAvailable`,
 Musixmatch Extension is available for every iOS8 devices.
 
-Note that if users doesn't have Musixmatch installed or old version installed without `Lyrics Extension`
+Note that if users doesn't have Musixmatch installed or old version installed without **Lyrics Extension**
 the Extension open the AppStore on Musixmatch app page to download/update.
 
 Next we need to wire up the action for this button to this method in your UIViewController:
@@ -98,6 +98,24 @@ Data needed in deep:
 6. Provide a `NSTimeInterval` for the song duration.
 7. Provide a `UIViewController` from the Extesion can appear.
 8. Provide a completion block that will be called when the user finishes their selection.
+
+### Customize Extension
+
+As the Extension can't change the **Status Bar**, there are two possible view styles
+
+1. StatusBar Black
+2. StatusBar White
+
+You can try the two different style by change the 'UISwitch' in the Demo App.
+Here an example:
+
+**StatusBar White**
+
+![StatusBar White](http://cl.ly/image/1W1h3P3W3O3x/IMG_1463.PNG)
+
+**StatusBar Black**
+
+![StatusBar Black](http://cl.ly/image/0o2w0x072K3i/IMG_1464.PNG)
 
 ## References
 
