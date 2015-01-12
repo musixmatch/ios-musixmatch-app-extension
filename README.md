@@ -9,7 +9,7 @@ Empowering your users to use strong, unique passwords has never been easier. Let
 
 ## App Extension in Action
 
-<a href="http://vimeo.com/111976590" target="_blank"><img src="http://f.cl.ly/items/1l223N091N3D012S3x45/Screen%20Shot%202015-01-12%20at%2014.53.35.png" width="500" height="889"></a>
+<a href="http://vimeo.com/111976590" target="_blank"><img src="http://cl.ly/ZFu9/Screen%20Shot%202015-01-12%20at%2014.53.35.png" width="500" height="889"></a>
 
 ## Just Give Me the Code (TL;DR)
 
@@ -19,9 +19,6 @@ If you're the type that just wants the code, here it is:
 
 * [MXMLyricsAction.h](https://github.com/Musixmatchdev/musixmatch-app-extension/blob/master/MXMLyricsAction/MXMLyricsAction.h)
 * [MXMLyricsAction.m](https://github.com/Musixmatchdev/musixmatch-app-extension/blob/master/MXMLyricsAction/MXMLyricsAction.m)
-
-NO -> Simply include these two files in your project, add a button with a [1Password login image](https://github.com/AgileBits/onepassword-app-extension/tree/master/1Password.xcassets) on it to your view, set the button's action to call the appropriate OnePasswordExtension method, and you're all set!
-
 
 ## Running the Demo App
 
@@ -34,43 +31,29 @@ To get started, download the Musixmatch Extension project from https://github.co
 
 Inside the downloaded folder, you'll find the resources needed to integrate with Musixmatch.
 
-NO -> The 1Password extension is also available via cocoapods, simply add `pod '1PasswordExtension', '~> 1.0.0'` to your Podfile, run `pod install` from your project directory and you're ready to go.
+### Step 2: Chose a song
 
-### Step 2: Install the Latest Musixmatch
+Tap on 'Add Music' button to reproduce a song
 
-The sample project depends upon having the latest version of Xcode 6, as well as the Musixmatch installed on your iOS device.
+### Step 3: Open Musixmatch Extension
 
-<!---
-If you are developing for OS X, you can enable betas within the 1Password > Preferences > Updates window (as shown [here](i.agilebits.com/Preferences_197C0C6B.png)) and enabling the _Include beta builds_ checkbox. Mac App Store users should [download the web store version](https://agilebits.com/downloads) in order to enable betas.
--->
+Tap on 'Lyrics' button and choose Musixmatch (the fist time you ave to enable if from 'More').
 
-To install the 1Password Beta, you will need to enroll in the 1Password for iOS Beta program. Please email [support+appex@agilebits.com](mailto:support+appex@agilebits.com) to express your interest. Let us know that you're an app developer and planning to add 1Password support.
+## Integrating Musixmatch With Your App
 
-Beta enrollment is a manual process so please allow a bit of time to hear back from us.
+You can open Musixmatch whenever you want to show lyrics on time for your nowplaying track.
+Just give to Musixmatch extension these datas:
 
+1. Title
+2. Artist
+3. Album
+4. Artwork
+5. Current seek time
+6. Track duration
 
-### Step 3: Run the Apps
+### Add Musixmatch Files to Your Project
 
-Open `1Password Extension Demos` Xcode workspace from within the `Demos` folder with Xcode 6, and then select the `ACME` target and set it to run your iOS device:
-
-<img src="http://i.agilebits.com/dt/Menubar_and_SignInViewController_m_and_README_md_—_onepassword-extension__git__master__197DEA31.png" width="342" height="150">
-
-Since you will not have 1Password running within your iOS Simulator, it is important that you run on your device.
-
-If all goes well, The ACME app will launch and you'll be able to test the 1Password App Extension. The first time you attempt to access the 1Password extension you will need to enable it by tapping on the _More_ button in the activity sheet and then enabling the _1Password Beta_ item in the _Activities_ list. If the 1Password icons are missing, it likely means you do not have the 1Password Beta installed.
-
-Back in Xcode you can change the scheme to ACME Browser to test the web view filling feature.
-
-## Integrating 1Password With Your App
-
-Once you've verified your setup by testing the sample applications, it is time to get your hands dirty and see exactly how to add 1Password into your app.
-
-Be forewarned, however, that there is not much code to get dirty with. If you were looking for an SDK to spend days of your life on, you'll be sorely disappointed.
-
-
-### Add 1Password Files to Your Project
-
-Add the `OnePasswordExtension.h`, `OnePasswordExtension.m`, and `1Password.xcassets` to your project and import `OnePasswordExtension.h` in your view contoller that implements the action for the 1Password button.
+Add the `MXMLyricsAction.h` and `MXMLyricsAction.h` to your project and import `MXMLyricsAction.h` in your view contoller that implements the action for the 1Password button.
 
 <img src="http://cl.ly/image/2g3B1r2O2z0L/Image%202014-07-29%20at%209.19.36%20AM.png" width="260" height="237"/>
 
@@ -171,75 +154,6 @@ Adding 1Password to your registration screen is very similar to adding 1Password
 You'll notice that we're passing a lot more information into 1Password than just the `URLString` key used in the sign in example. This is because at the end of the password generation process, 1Password will create a brand new login and save it. It's not possible for 1Password to ask your app for additional information later on, so we pass in everything we can before showing the password generator screen.
 
 An important thing to notice is the `AppExtensionURLStringKey` is set to the exact same value we used in the login scenario. This allows users to quickly find the login they saved for your app the next time they need to sign in.
-
-### Use Case #3: Change Password
-
-Allow your users to easily change passwords for saved logins in 1Password directly from your change password page. The updated login along with the old and the newly generated are returned to you so you can update your UI and complete the password change process. If no matching login is found in 1Password, the user will be prompted to save a new login instead.
-
-Adding 1Password to your change password screen is very similar to adding 1Password to your login and registration screens. In this case you'll wire the 1Password button to an action like this:
-
-```objective-c
-- (IBAction)changePasswordIn1Password:(id)sender {
-	NSString *changedPassword = self.freshPasswordTextField.text ? : @"";
-	NSString *oldPassword = self.oldPasswordTextField.text ? : @"";
-	NSString *username = [LoginInformation sharedLoginInformation].username ? : @"";
-
-	NSDictionary *loginDetails = @{
-									  AppExtensionTitleKey: @"ACME",
-									  AppExtensionUsernameKey: username, // 1Password will prompt the user to create a new item if no matching logins are found with this username.
-									  AppExtensionPasswordKey: changedPassword,
-									  AppExtensionOldPasswordKey: oldPassword,
-									  AppExtensionNotesKey: @"Saved with the ACME app",
-									};
-
-	// Password generation options are optional, but are very handy in case you have strict rules about password lengths
-	NSDictionary *passwordGenerationOptions = @{
-		AppExtensionGeneratedPasswordMinLengthKey: @(6),
-		AppExtensionGeneratedPasswordMaxLengthKey: @(50)
-	};
-
-	__weak typeof (self) miniMe = self;
-
-	[[OnePasswordExtension sharedExtension] changePasswordForLoginForURLString:@"https://www.acme.com" loginDetails:loginDetails passwordGenerationOptions:passwordGenerationOptions forViewController:self sender:sender completion:^(NSDictionary *loginDict, NSError *error) {
-		if (!loginDict) {
-			if (error.code != AppExtensionErrorCodeCancelledByUser) {
-				NSLog(@"Error invoking 1Password App Extension for find login: %@", error);
-			}
-			return;
-		}
-
-		__strong typeof(self) strongMe = miniMe;
-		strongMe.oldPasswordTextField.text = loginDict[AppExtensionOldPasswordKey];
-		strongMe.freshPasswordTextField.text = loginDict[AppExtensionPasswordKey];
-		strongMe.confirmPasswordTextField.text = loginDict[AppExtensionPasswordKey];
-	}];
-}
-```
-
-### Use Case #4: Web View Support
-
-The 1Password App Extension is not limited to filling native UIs. With just a little bit of extra effort, users can fill `UIWebView`s and `WKWebView`s within your application as well.
-
-Simply add a button to your UI with its action assigned to this method in your web view's UIViewController:
-
-```objective-c
-- (IBAction)fillUsing1Password:(id)sender {
-	[[OnePasswordExtension sharedExtension] fillLoginIntoWebView:self.webView forViewController:self sender:sender completion:^(BOOL success, NSError *error) {
-		if (!success) {
-			NSLog(@"Failed to fill login in webview: <%@>", error);
-		}
-	}];
-}
-```
-
-1Password will take care of all the details of collecting information about the currently displayed page, allow the user to select the desired login, and then fill the web form details within the page.
-
-
-## Projects supporting iOS 7.1 and earlier
-
-If your project's Deployment Target is earlier than iOS 8.0, please make sure that you link to the `MobileCoreServices` and `WebKit` frameworks.
-
-<a href="https://vimeo.com/102142106" target="_blank"><img src="https://www.evernote.com/shard/s340/sh/7547419d-6c49-4b45-bdb1-575c28678164/49cb7e0c1f508d1f67f5cf0361d58d3a/deep/0/WebView-Demo-for-iOS.xcodeproj.png" width="640"></a>
 
 ## Best Practices
 
