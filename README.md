@@ -53,130 +53,63 @@ Just give to Musixmatch extension these datas:
 
 ### Add Musixmatch Files to Your Project
 
-Add the `MXMLyricsAction.h` and `MXMLyricsAction.h` to your project and import `MXMLyricsAction.h` in your view contoller that implements the action for the 1Password button.
+Add the `MXMLyricsAction.h` and `MXMLyricsAction.m` to your project and import `MXMLyricsAction.h` in your view contoller that implements the action for the lyrics button.
 
-<img src="http://cl.ly/image/2g3B1r2O2z0L/Image%202014-07-29%20at%209.19.36%20AM.png" width="260" height="237"/>
+### How to Open Musixmatch Extension
 
-### Use Case #1: Native App Login
+Add lyrics button on your view, you can enable it by check `isSystemAppExtensionAPIAvailable`,
+Musixmatch Extension is available for every iOS8 devices.
 
-In this use case we'll learn how to enable your existing users to fill their credentials into your native app's login form. If your application is using a web view to login (i.e. OAuth), you'll want to follow the web view integration steps in Use Case #3.
-
-The first step is to add a UIButton to your login page. Use an existing 1Password image from the _1Password.xcassets_ catalog so users recognize the button.
-
-You'll need to hide this button (or educate users on the benefits of strong, unique passwords) if no password manager is installed. You can use `isAppExtensionAvailable` to determine availability and hide the button if it isn't. For example:
-
-```objective-c
--(void)viewDidLoad {
-	[super viewDidLoad];
-	[self.onepasswordSigninButton setHidden:![[OnePasswordExtension sharedExtension] isAppExtensionAvailable]];
-}
-```
-
-Note that `isAppExtensionAvailable` looks to see if any app is installed that supports the generic `org-appextension-feature-password-management` feature. Any application that supports password management actions can be used.
+Note that if users doesn't have Musixmatch installed or old version installed without `Lyrics Extension`
+the Extension open the AppStore on Musixmatch app page to download/update.
 
 Next we need to wire up the action for this button to this method in your UIViewController:
 
 ```objective-c
-- (IBAction)findLoginFrom1Password:(id)sender {
-	__weak typeof (self) miniMe = self;
-	[[OnePasswordExtension sharedExtension] findLoginForURLString:@"https://www.acme.com" forViewController:self sender:sender completion:^(NSDictionary *loginDict, NSError *error) {
-		if (!loginDict) {
-			if (error.code != AppExtensionErrorCodeCancelledByUser) {
-				NSLog(@"Error invoking 1Password App Extension for find login: %@", error);
-			}
-			return;
-		}
-		
-		__strong typeof(self) strongMe = miniMe;
-		strongMe.usernameTextField.text = loginDict[AppExtensionUsernameKey];
-		strongMe.passwordTextField.text = loginDict[AppExtensionPasswordKey];
-	}];
+- (IBAction)lyrics:(id)sender {
+ 
+    MPMediaItem *item = [[MPMusicPlayerController iPodMusicPlayer] nowPlayingItem];
+
+    if (item) {
+        [[MXMLyricsAction sharedExtension] findLyricsForSongWithTitle:item.title
+                                                               artist:item.artist
+                                                                album:item.albumTitle
+                                                              artWork:[item.artwork imageWithSize:artWork.frame.size]
+                                                      currentProgress:[[MPMusicPlayerController iPodMusicPlayer] currentPlaybackTime]
+                                                        trackDuration:item.playbackDuration
+                                                    forViewController:self
+                                                               sender:sender
+                                                     competionHandler:^(NSError *error) {
+                                                         
+                                                     }];
+    }
+    
 }
+
 ```
 
-Aside from the [weak/strong self dance](http://dhoerl.wordpress.com/2013/04/23/i-finally-figured-out-weakself-and-strongself/), this code is pretty straight forward:
+Data needed in deep:
 
-1. Provide a `URLString` that uniquely identifies your service. For example, if your app required a Twitter login, you would pass in `@"https://twitter.com"`. See _Best Practices_ for details.
-2. Pass in the `UIViewController` that you want the share sheet to be presented upon.
-3. Provide a completion block that will be called when the user finishes their selection. This block is guaranteed to be called on the main thread.
-4. Extract the needed information from the login dictionary and update your UI elements.
-
-
-### Use Case #2: New User Registration
-
-Allow your users to access 1Password directly from your registration page so they can generate strong, unique passwords. 1Password will also save the login for future use, allowing users to easily log into your app on their other devices. The newly saved login and generated password are returned to you so you can update your UI and complete the registration.
-
-Adding 1Password to your registration screen is very similar to adding 1Password to your login screen. In this case you'll wire the 1Password button to an action like this:
-
-```objective-c
-- (IBAction)saveLoginTo1Password:(id)sender {
-	NSDictionary *newLoginDetails = @{
-		AppExtensionTitleKey: @"ACME",
-		AppExtensionUsernameKey: self.usernameTextField.text ? : @"",
-		AppExtensionPasswordKey: self.passwordTextField.text ? : @"",
-		AppExtensionNotesKey: @"Saved with the ACME app",
-		AppExtensionSectionTitleKey: @"ACME Browser",
-		AppExtensionFieldsKey: @{
-			  @"firstname" : self.firstnameTextField.text ? : @"",
-			  @"lastname" : self.lastnameTextField.text ? : @""
-			  // Add as many string fields as you please.
-		}
-	};
-	
-	// Password generation options are optional, but are very handy in case you have strict rules about password lengths
-	NSDictionary *passwordGenerationOptions = @{
-		AppExtensionGeneratedPasswordMinLengthKey: @(6),
-		AppExtensionGeneratedPasswordMaxLengthKey: @(50)
-	};
-
-	__weak typeof (self) miniMe = self;
-
-	[[OnePasswordExtension sharedExtension] storeLoginForURLString:@"https://www.acme.com" loginDetails:newLoginDetails passwordGenerationOptions:passwordGenerationOptions forViewController:self sender:sender completion:^(NSDictionary *loginDict, NSError *error) {
-
-		if (!loginDict) {
-			if (error.code != AppExtensionErrorCodeCancelledByUser) {
-				NSLog(@"Failed to use 1Password App Extension to save a new Login: %@", error);
-			}
-			return;
-		}
-
-		__strong typeof(self) strongMe = miniMe;
-
-		strongMe.usernameTextField.text = loginDict[AppExtensionUsernameKey] ? : @"";
-		strongMe.passwordTextField.text = loginDict[AppExtensionPasswordKey] ? : @"";
-		strongMe.firstnameTextField.text = loginDict[AppExtensionReturnedFieldsKey][@"firstname"] ? : @"";
-		strongMe.lastnameTextField.text = loginDict[AppExtensionReturnedFieldsKey][@"lastname"] ? : @"";
-		// retrieve any additional fields that were passed in newLoginDetails dictionary
-	}];
-}
-```
-
-You'll notice that we're passing a lot more information into 1Password than just the `URLString` key used in the sign in example. This is because at the end of the password generation process, 1Password will create a brand new login and save it. It's not possible for 1Password to ask your app for additional information later on, so we pass in everything we can before showing the password generator screen.
-
-An important thing to notice is the `AppExtensionURLStringKey` is set to the exact same value we used in the login scenario. This allows users to quickly find the login they saved for your app the next time they need to sign in.
-
-## Best Practices
-
-* Use the same `URLString` during Registration and Login.
-* Ensure your `URLString` is set to your actual service so your users can easily find their logins within the main 1Password app.
-* You should only ask for the login information of your own service or one specific to your app. Giving a URL for a service which you do not own or support may seriously break the customer's trust in your service/app.
-* If you don't have a website for your app you should specify your bundle identifier as the `URLString`, like so: app://bundleIdentifier (e.g. app://com.acme.awesome-app).
-* [Send us an icon](mailto:support+appex@agilebits.com) to use for our Rich Icon service so the user can see your lovely icon while creating new items.
-* Use the icons provided in the `1Password.xcassets` asset catalog so users are familiar with what it will do. Contact us if you'd like additional sizes or have other special requirements.
-* Enable users to set 1Password as their default browser for external web links.
-* On your registration page, pre-validate fields before calling 1Password. For example, display a message if the username is not available so the user can fix it before activating 1Password.
-
+1. Provide a `NSString` for song title.
+2. Provide a `NSString` for song artist name.
+3. Pass a `NSString` for song album name.
+4. Pass an `UIImage` for the view's background (artwork).
+5. Provide a `NSTimeInterval` for the current seek time.
+6. Provide a `NSTimeInterval` for the song duration.
+7. Provide a `UIViewController` from the Extesion can appear.
+8. Provide a completion block that will be called when the user finishes their selection.
 
 ## References
 
-If you open up OnePasswordExtension.m and start poking around, you'll be interested in these references.
+If you open up MXMLyricsAction.m and start poking around, you'll be interested in these references.
 
 * [Apple Extension Guide](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)
 * [NSItemProvider](https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSItemProvider_Class/index.html#//apple_ref/doc/uid/TP40014351), [NSExtensionItem](https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/doc/uid/TP40014375), and [UIActivityViewController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIActivityViewController_Class/index.html#//apple_ref/doc/uid/TP40011976) class references.
 
-
 ## Contact Us
 
+<!---
 Contact us, please! We'd love to hear from you about how you integrated 1Password within your app, how we can further improve things, and add your app to [apps that integrate with 1Password](http://blog.agilebits.com/2013/04/03/ios-apps-1password-integrated-support/).
+-->
 
-You can reach us at support+appex@agilebits.com, or if you prefer, [@1PasswordBeta](https://twitter.com/1PasswordBeta) on Twitter.
+You can reach us at ios@musixmatch.com, or if you prefer, [@musixmatch_api](https://twitter.com/musixmatch_api) on Twitter.
