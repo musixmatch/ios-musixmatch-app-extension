@@ -111,7 +111,7 @@ Here an example:
 
 **StatusBar White**
 
-<img src="http://cl.ly/image/0o2w0x072K3i/IMG_1463.PNG" alt="StatusBar White" width="500" height="889">
+<img src="http://f.cl.ly/items/453m2w3D2n1L3m2N0P39/IMG_1463.PNG" alt="StatusBar White" width="500" height="889">
 
 **StatusBar Black**
 
