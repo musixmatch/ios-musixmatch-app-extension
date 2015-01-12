@@ -9,7 +9,7 @@ Empowering your users to use strong, unique passwords has never been easier. Let
 
 ## App Extension in Action
 
-<a href="https://vimeo.com/102142106" target="_blank"><img src="http://cl.ly/image/3Q232U370v0W/1PasswordAppExtensionPlayVideo.png" width="640" height="360"></a>
+<a href="http://vimeo.com/111976590" target="_blank"></a>
 
 
 ## Just Give Me the Code (TL;DR)
