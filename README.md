@@ -9,13 +9,7 @@ With the Musixmatch extension you can:
 
 ## App Extension in Action
 
-<<<<<<< HEAD
-<iframe src="//player.vimeo.com/video/111976590" width="500" height="889" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/111976590">Musixmatch Lyrics Extension</a> from <a href="http://vimeo.com/user15913205">Martino Bonfiglioli</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-
-<a href="https://vimeo.com/102142106" target="_blank"><img src="http://cl.ly/image/3Q232U370v0W/1PasswordAppExtensionPlayVideo.png" width="640" height="360"></a>
-=======
 <a href="http://vimeo.com/111976590" target="_blank"><img src="http://cl.ly/ZFu9/Screen%20Shot%202015-01-12%20at%2014.53.35.png" width="500" height="889"></a>
->>>>>>> 11bd63665477bae46664f4eac37bb4b824909ce6
 
 ## Just Give Me the Code
 
@@ -35,21 +29,7 @@ To get started, download the Musixmatch Extension project from https://github.co
 
 Inside the downloaded folder, you'll find the resources needed to integrate with Musixmatch.
 
-<<<<<<< HEAD
-### Step 2: Install the Latest Musixmatch
-
-The sample project depends upon having the latest version of Xcode 6, as well as the Musixmatch installed on your iOS device.
-
-<!---
-If you are developing for OS X, you can enable betas within the 1Password > Preferences > Updates window (as shown [here](i.agilebits.com/Preferences_197C0C6B.png)) and enabling the _Include beta builds_ checkbox. Mac App Store users should [download the web store version](https://agilebits.com/downloads) in order to enable betas.
--->
-
-### Step 3: Run the Apps
-
-Open `1Password Extension Demos` Xcode workspace from within the `Demos` folder with Xcode 6, and then select the `ACME` target and set it to run your iOS device:
-=======
 ### Step 2: Chose a song
->>>>>>> 11bd63665477bae46664f4eac37bb4b824909ce6
 
 Tap on 'Add Music' button to reproduce a song
 
