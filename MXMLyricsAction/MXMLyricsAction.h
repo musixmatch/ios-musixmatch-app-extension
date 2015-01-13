@@ -11,6 +11,8 @@
 
 @interface MXMLyricsAction : NSObject
 
+@property (nonatomic, assign) BOOL nativeAppStoreView; // Default YES
+
 + (MXMLyricsAction*)sharedExtension;
 
 - (BOOL)isSystemAppExtensionAPIAvailable;

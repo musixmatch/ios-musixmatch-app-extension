@@ -9,6 +9,8 @@ Empowering your users to use strong, unique passwords has never been easier. Let
 
 ## App Extension in Action
 
+<iframe src="//player.vimeo.com/video/111976590" width="500" height="889" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/111976590">Musixmatch Lyrics Extension</a> from <a href="http://vimeo.com/user15913205">Martino Bonfiglioli</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
 <a href="https://vimeo.com/102142106" target="_blank"><img src="http://cl.ly/image/3Q232U370v0W/1PasswordAppExtensionPlayVideo.png" width="640" height="360"></a>
 
 
@@ -35,8 +37,6 @@ To get started, download the Musixmatch Extension project from https://github.co
 
 Inside the downloaded folder, you'll find the resources needed to integrate with Musixmatch.
 
-NO -> The 1Password extension is also available via cocoapods, simply add `pod '1PasswordExtension', '~> 1.0.0'` to your Podfile, run `pod install` from your project directory and you're ready to go.
-
 ### Step 2: Install the Latest Musixmatch
 
 The sample project depends upon having the latest version of Xcode 6, as well as the Musixmatch installed on your iOS device.
@@ -44,11 +44,6 @@ The sample project depends upon having the latest version of Xcode 6, as well as
 <!---
 If you are developing for OS X, you can enable betas within the 1Password > Preferences > Updates window (as shown [here](i.agilebits.com/Preferences_197C0C6B.png)) and enabling the _Include beta builds_ checkbox. Mac App Store users should [download the web store version](https://agilebits.com/downloads) in order to enable betas.
 -->
-
-To install the 1Password Beta, you will need to enroll in the 1Password for iOS Beta program. Please email [support+appex@agilebits.com](mailto:support+appex@agilebits.com) to express your interest. Let us know that you're an app developer and planning to add 1Password support.
-
-Beta enrollment is a manual process so please allow a bit of time to hear back from us.
-
 
 ### Step 3: Run the Apps
 

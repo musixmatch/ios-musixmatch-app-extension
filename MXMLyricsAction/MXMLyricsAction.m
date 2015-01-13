@@ -29,7 +29,7 @@ NSString *const MusixmatchExtensionStartDate =      @"startDate";
 // View Style
 NSString *const MusixmatchExtensionStatusBarStyle = @"statusBar";
 
-// Additional infos
+// Additional Infos
 NSString *const MusixmatchExtensionHostBundleID =   @"hostBundle";
 
 NSString *musixmatchAppStoreURL =   @"itms-apps://itunes.apple.com/app/id448278467";
@@ -40,6 +40,7 @@ NSString *musixmatchAppStoreAppID = @"448278467";
 @end
 
 @implementation MXMLyricsAction
+@synthesize nativeAppStoreView;
 
 #pragma mark - Singleton
 
@@ -52,6 +53,16 @@ NSString *musixmatchAppStoreAppID = @"448278467";
     });
     
     return __sharedExtension;
+}
+
+#pragma mark - Init
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        nativeAppStoreView = YES;
+    }
+    return self;
 }
 
 #pragma mark - Util
@@ -145,17 +156,28 @@ NSString *musixmatchAppStoreAppID = @"448278467";
     NSAssert(viewController != nil, @"viewController must not be nil");
     
     if (![self isSystemAppExtensionAPIAvailable]) {
+        
         NSLog(@"Failed to findLoginForURLString, system API is not available");
-        completion(nil);
+        
+        if (completion) {
+            completion(nil);
+        }
+        
         return;
     }
     
     if (![self isMusixmatchExtensionAvailable]) {
-        completion(nil);
-        [self showAppStoreForMusixmatchFromViewController:viewController];
-        return;
-        [self openStore];
-        return;
+        
+        if (completion) {
+            completion(nil);
+        }
+        
+        if (nativeAppStoreView) {
+            [self showAppStoreForMusixmatchFromViewController:viewController];
+        }else {
+            [self openStore];
+        }
+
     }
     
 #ifdef __IPHONE_8_0
