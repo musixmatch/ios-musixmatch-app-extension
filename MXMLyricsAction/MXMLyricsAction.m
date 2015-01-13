@@ -63,6 +63,7 @@ NSString *musixmatchAppStoreAppID = @"448278467";
     self = [super init];
     if (self) {
         nativeAppStoreView = YES;
+        showAlertBeforeAppStore = YES;
     }
     return self;
 }
@@ -185,11 +186,11 @@ NSString *musixmatchAppStoreAppID = @"448278467";
         [self setHostViewController:viewController];
         
         if (showAlertBeforeAppStore) {
-            UIAlertView *storeAlert = [[UIAlertView alloc] initWithTitle:@"Musixmatch Required"
-                                                                 message:@"Download the latest version of Musixmatch from the AppStore to watch song lyrics"
+            UIAlertView *storeAlert = [[UIAlertView alloc] initWithTitle:@"Musixmatch app is required"
+                                                                 message:@"To read the lyrics you need to install Musixmatch from the AppStore."
                                                                 delegate:self
-                                                       cancelButtonTitle:@"No thanks"
-                                                       otherButtonTitles:@"Ok", nil];
+                                                       cancelButtonTitle:@"No, thanks"
+                                                       otherButtonTitles:@"Get the app", nil];
             [storeAlert show];
         }else {
             [self openAppStore];
