@@ -35,12 +35,14 @@ NSString *const MusixmatchExtensionHostBundleID =   @"hostBundle";
 NSString *musixmatchAppStoreURL =   @"itms-apps://itunes.apple.com/app/id448278467";
 NSString *musixmatchAppStoreAppID = @"448278467";
 
-@interface MXMLyricsAction () < SKStoreProductViewControllerDelegate >
-
+@interface MXMLyricsAction () < SKStoreProductViewControllerDelegate, UIAlertViewDelegate >
+@property (nonatomic, strong) UIViewController *hostViewController;
 @end
 
 @implementation MXMLyricsAction
+@synthesize hostViewController;
 @synthesize nativeAppStoreView;
+@synthesize showAlertBeforeAppStore;
 
 #pragma mark - Singleton
 
@@ -87,7 +89,15 @@ NSString *musixmatchAppStoreAppID = @"448278467";
     
 }
 
-- (void)openStore {
+- (void)openAppStore {
+    if (nativeAppStoreView && self.hostViewController) {
+        [self showAppStoreForMusixmatchFromViewController:self.hostViewController];
+    }else {
+        [self openStoreWithOpenURL];
+    }
+}
+
+- (void)openStoreWithOpenURL {
 
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:musixmatchAppStoreURL]];
     
@@ -172,19 +182,33 @@ NSString *musixmatchAppStoreAppID = @"448278467";
             completion(nil);
         }
         
-        if (nativeAppStoreView) {
-            [self showAppStoreForMusixmatchFromViewController:viewController];
+        [self setHostViewController:viewController];
+        
+        if (showAlertBeforeAppStore) {
+            UIAlertView *storeAlert = [[UIAlertView alloc] initWithTitle:@"Musixmatch Required"
+                                                                 message:@"Download the latest version of Musixmatch from the AppStore to watch song lyrics"
+                                                                delegate:self
+                                                       cancelButtonTitle:@"No thanks"
+                                                       otherButtonTitles:@"Ok", nil];
+            [storeAlert show];
         }else {
-            [self openStore];
+            [self openAppStore];
         }
 
+        return;
     }
     
 #ifdef __IPHONE_8_0
     
     UIActivityViewController *activityViewController = [self activityViewControllerForItem:dict viewController:viewController sender:sender typeIdentifier:kUTTypeAppExtensionFindSongLyric];
     activityViewController.completionWithItemsHandler = ^(NSString *activityType, BOOL completed, NSArray *returnedItems, NSError *activityError) {
-
+       
+        if (completion) {
+            completion(nil);
+        }
+        
+        [self setHostViewController:nil];
+        
     };
     
     [viewController presentViewController:activityViewController animated:YES completion:^{
@@ -225,6 +249,16 @@ NSString *musixmatchAppStoreAppID = @"448278467";
 
 - (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
     [viewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - UIAlertView Delegate
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex==1) {
+        [self openAppStore];
+    }
+    
 }
 
 @end
