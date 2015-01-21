@@ -139,8 +139,10 @@ NSString *musixmatchAppStoreAppID = @"448278467";
              forKey:MusixmatchExtensionArtist];
     [dict setObject:StringOrEmpty(album)
              forKey:MusixmatchExtensionAlbum];
-    [dict setObject:image
-             forKey:MusixmatchExtensionCoverArt];
+    if (image) {
+        [dict setObject:image
+                 forKey:MusixmatchExtensionCoverArt];
+    }
     [dict setObject:[NSString stringWithFormat:@"%f", progress]
              forKey:MusixmatchExtensionProgress];
     [dict setObject:[NSString stringWithFormat:@"%f", duration]
