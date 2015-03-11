@@ -31,7 +31,7 @@
 
 /* Begin PBXFileReference section */
 		61B704A71A252DCA009E709E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		61FAAD8E1A0108E10063206F /* MXMLyricsActionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MXMLyricsActionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		61FAAD8E1A0108E10063206F /* Lyrics Extension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lyrics Extension.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61FAAD921A0108E10063206F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61FAAD931A0108E10063206F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61FAAD951A0108E10063206F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		61FAAD8F1A0108E10063206F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				61FAAD8E1A0108E10063206F /* MXMLyricsActionDemo.app */,
+				61FAAD8E1A0108E10063206F /* Lyrics Extension.app */,
 				61FAADA71A0108E10063206F /* MXMLyricsActionDemoTests.xctest */,
 			);
 			name = Products;
@@ -157,7 +157,7 @@
 			);
 			name = MXMLyricsActionDemo;
 			productName = MXMLyricsActionDemo;
-			productReference = 61FAAD8E1A0108E10063206F /* MXMLyricsActionDemo.app */;
+			productReference = 61FAAD8E1A0108E10063206F /* Lyrics Extension.app */;
 			productType = "com.apple.product-type.application";
 		};
 		61FAADA61A0108E10063206F /* MXMLyricsActionDemoTests */ = {
@@ -189,6 +189,7 @@
 				TargetAttributes = {
 					61FAAD8D1A0108E10063206F = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = C83KSC7728;
 					};
 					61FAADA61A0108E10063206F = {
 						CreatedOnToolsVersion = 6.1;
@@ -367,9 +368,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MXMLyricsActionDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Lyrics Extension";
+				PROVISIONING_PROFILE = "54f04c35-74a4-4511-8ca7-d6ac09666146";
 			};
 			name = Debug;
 		};
@@ -377,9 +380,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MXMLyricsActionDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Lyrics Extension";
+				PROVISIONING_PROFILE = "54f04c35-74a4-4511-8ca7-d6ac09666146";
 			};
 			name = Release;
 		};
