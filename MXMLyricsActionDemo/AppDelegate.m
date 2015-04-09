@@ -1,12 +1,15 @@
-//
-//  AppDelegate.m
-//  MXMLyricsActionDemo
-//
-//  Created by Martino Bonfiglioli on 29/10/14.
-//  Copyright (c) 2014 musixmatch. All rights reserved.
-//
+/**
+ *
+ * Musixmatch iOS Lyrics Extention Demo
+ *
+ * About: https://developer.musixmatch.com/documentation/ios-lyrics-extension
+ * Github: https://github.com/Musixmatchdev/musixmatch-app-extension
+ *
+ * Copyright (c) 2014-2015 musixmatch. All rights reserved.
+ */
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    ViewController *mainController = [[ViewController alloc] initWithNibName:@"MainView" bundle:nil];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = mainController;
+    [self.window setBackgroundColor:[UIColor whiteColor]];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
