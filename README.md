@@ -11,7 +11,17 @@ Please refer to the official documentation on [Musixmatch.com](https://developer
 
 ## App Extension in Action
 
-<a href="http://vimeo.com/111976590" target="_blank"><img src="http://cl.ly/ZFu9/Screen%20Shot%202015-01-12%20at%2014.53.35.png" width="500" height="889"></a>
+1. Open the Sample Player App
+
+<img src="https://cloud.githubusercontent.com/assets/163333/7069761/f8772520-deda-11e4-84b4-48906995c0b3.png" width="500" height="889">
+
+2. Tap the LYRICS button
+
+<img src="https://cloud.githubusercontent.com/assets/163333/7069764/fe1e4c24-deda-11e4-9363-0e1a4756c986.png" width="500" height="889">
+
+3. Get the Lyrics
+
+<a href="http://vimeo.com/111976590" target="_blank"><img src="https://cloud.githubusercontent.com/assets/163333/7069826/4e3bad64-dedb-11e4-9d7d-2a069cede394.png" width="500" height="889"></a>
 
 ## Just Give Me the Code
 
