@@ -279,6 +279,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				BUILDNUMBER = 2015042700;
+				BUILDVERSION = 1.1.1;
+				BUNDLEID = com.musixmatch.samples.extension;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Loreto Parisi (393723EGPQ)";
 				INFOPLIST_FILE = MXMLyricsActionDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -295,6 +298,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				BUILDNUMBER = 2015042700;
+				BUILDVERSION = 1.1.1;
+				BUNDLEID = com.musixmatch.samples.extension;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: MUSIXMATCH SPA";
 				INFOPLIST_FILE = MXMLyricsActionDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
