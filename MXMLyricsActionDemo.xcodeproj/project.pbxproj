@@ -139,7 +139,7 @@
 				TargetAttributes = {
 					61FAAD8D1A0108E10063206F = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = C83KSC7728;
+						DevelopmentTeam = DL6BZH9493;
 					};
 				};
 			};
@@ -299,7 +299,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "Lyrics Extension";
-				PROVISIONING_PROFILE = "6a9a5cc2-6b1b-45dc-a7b1-7a495d3aa108";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 			};
@@ -313,12 +313,12 @@
 				BUILDNUMBER = 2015042700;
 				BUILDVERSION = 1.1.1;
 				BUNDLEID = com.musixmatch.samples.extension.enterprise;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MXMLyricsActionDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "Lyrics Extension";
-				PROVISIONING_PROFILE = "7856ad28-1e0d-4f25-9581-e2d453872624";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 			};
