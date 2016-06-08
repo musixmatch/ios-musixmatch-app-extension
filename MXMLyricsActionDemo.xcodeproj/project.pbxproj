@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		61B704A81A252DCA009E709E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B704A71A252DCA009E709E /* StoreKit.framework */; };
+		61BD2FB01B064E6B00964CD1 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61BD2FAE1B064E6B00964CD1 /* Launch Screen.xib */; };
 		61FAAD941A0108E10063206F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61FAAD931A0108E10063206F /* main.m */; };
 		61FAAD971A0108E10063206F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61FAAD961A0108E10063206F /* AppDelegate.m */; };
 		61FAAD9F1A0108E10063206F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61FAAD9E1A0108E10063206F /* Images.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		61B704A71A252DCA009E709E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		61BD2FAF1B064E6B00964CD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 		61FAAD8E1A0108E10063206F /* Lyrics Extension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lyrics Extension.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61FAAD921A0108E10063206F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61FAAD931A0108E10063206F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				8427B4411AD6B38F009DB474 /* MainView.xib */,
 				61FAAD921A0108E10063206F /* Info.plist */,
 				61FAAD931A0108E10063206F /* main.m */,
+				61BD2FAE1B064E6B00964CD1 /* Launch Screen.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			files = (
 				61FAAD9F1A0108E10063206F /* Images.xcassets in Resources */,
 				8427B4431AD6B38F009DB474 /* MainView.xib in Resources */,
+				61BD2FB01B064E6B00964CD1 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +189,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		61BD2FAE1B064E6B00964CD1 /* Launch Screen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				61BD2FAF1B064E6B00964CD1 /* Base */,
+			);
+			name = "Launch Screen.xib";
+			sourceTree = "<group>";
+		};
 		8427B4411AD6B38F009DB474 /* MainView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,13 +294,13 @@
 				BUILDNUMBER = 2016060800;
 				BUILDVERSION = 1.1.2;
 				BUNDLEID = com.musixmatch.samples.extension;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Loreto Parisi (HFX54548Y7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Loreto Parisi (HFX54548Y7)";
 				INFOPLIST_FILE = MXMLyricsActionDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "Lyrics Extension";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "26e4e6de-c8da-4e51-b4fa-e51d0721d8b2";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 			};
@@ -308,7 +320,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "Lyrics Extension";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "4341090b-f8dc-49ab-bdf4-8fa6e73caaa2";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 			};
