@@ -9,6 +9,7 @@
  */
 
 #import "ViewController.h"
+#import <MusixmatchLyricsAction/MusixmatchLyricsAction.h>
 
 @interface ViewController () < MPMediaPickerControllerDelegate > {
 
