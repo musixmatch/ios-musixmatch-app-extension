@@ -13,10 +13,40 @@
 		61FAAD971A0108E10063206F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61FAAD961A0108E10063206F /* AppDelegate.m */; };
 		61FAAD9F1A0108E10063206F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61FAAD9E1A0108E10063206F /* Images.xcassets */; };
 		61FAADB81A010EFB0063206F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61FAADB71A010EFB0063206F /* MediaPlayer.framework */; };
-		61FAADBF1A011EA50063206F /* MXMLyricsAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 61FAADBE1A011EA50063206F /* MXMLyricsAction.m */; };
 		8427B4401AD6B36C009DB474 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8427B43F1AD6B36C009DB474 /* ViewController.m */; };
 		8427B4431AD6B38F009DB474 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8427B4411AD6B38F009DB474 /* MainView.xib */; };
+		84E3A87E1D0883870065FD5A /* MusixmatchLyricsAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 84E3A87D1D0883870065FD5A /* MusixmatchLyricsAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84E3A8821D0883870065FD5A /* MusixmatchLyricsAction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E3A87B1D0883870065FD5A /* MusixmatchLyricsAction.framework */; };
+		84E3A8831D0883870065FD5A /* MusixmatchLyricsAction.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84E3A87B1D0883870065FD5A /* MusixmatchLyricsAction.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84E3A8881D0883A40065FD5A /* MXMLyricsAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 61FAADBE1A011EA50063206F /* MXMLyricsAction.m */; };
+		84E3A8891D08844A0065FD5A /* MXMLyricsAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 61FAADBD1A011EA50063206F /* MXMLyricsAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84E3A88A1D0885200065FD5A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B704A71A252DCA009E709E /* StoreKit.framework */; };
+		84E3A88C1D08853B0065FD5A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E3A88B1D08853B0065FD5A /* UIKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84E3A8801D0883870065FD5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61FAAD861A0108E10063206F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84E3A87A1D0883870065FD5A;
+			remoteInfo = MusixmatchLyricsAction;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		84E3A8871D0883870065FD5A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				84E3A8831D0883870065FD5A /* MusixmatchLyricsAction.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		61B704A71A252DCA009E709E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -33,6 +63,10 @@
 		8427B43E1AD6B36C009DB474 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8427B43F1AD6B36C009DB474 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8427B4421AD6B38F009DB474 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainView.xib; sourceTree = "<group>"; };
+		84E3A87B1D0883870065FD5A /* MusixmatchLyricsAction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MusixmatchLyricsAction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E3A87D1D0883870065FD5A /* MusixmatchLyricsAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusixmatchLyricsAction.h; sourceTree = "<group>"; };
+		84E3A87F1D0883870065FD5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84E3A88B1D08853B0065FD5A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +76,16 @@
 			files = (
 				61B704A81A252DCA009E709E /* StoreKit.framework in Frameworks */,
 				61FAADB81A010EFB0063206F /* MediaPlayer.framework in Frameworks */,
+				84E3A8821D0883870065FD5A /* MusixmatchLyricsAction.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E3A8771D0883870065FD5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E3A88C1D08853B0065FD5A /* UIKit.framework in Frameworks */,
+				84E3A88A1D0885200065FD5A /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +95,9 @@
 		61FAAD851A0108E10063206F = {
 			isa = PBXGroup;
 			children = (
-				61FAADB91A011E270063206F /* MXMLyricsAction */,
 				61FAAD901A0108E10063206F /* MXMLyricsActionDemo */,
+				61FAADB91A011E270063206F /* Classes */,
+				84E3A87C1D0883870065FD5A /* MusixmatchLyricsAction */,
 				8427B4301AD6944E009DB474 /* Frameworks */,
 				61FAAD8F1A0108E10063206F /* Products */,
 			);
@@ -62,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				61FAAD8E1A0108E10063206F /* Lyrics Extension.app */,
+				84E3A87B1D0883870065FD5A /* MusixmatchLyricsAction.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,25 +136,48 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		61FAADB91A011E270063206F /* MXMLyricsAction */ = {
+		61FAADB91A011E270063206F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				61FAADBD1A011EA50063206F /* MXMLyricsAction.h */,
 				61FAADBE1A011EA50063206F /* MXMLyricsAction.m */,
 			);
+			name = Classes;
 			path = MXMLyricsAction;
 			sourceTree = "<group>";
 		};
 		8427B4301AD6944E009DB474 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84E3A88B1D08853B0065FD5A /* UIKit.framework */,
 				61FAADB71A010EFB0063206F /* MediaPlayer.framework */,
 				61B704A71A252DCA009E709E /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		84E3A87C1D0883870065FD5A /* MusixmatchLyricsAction */ = {
+			isa = PBXGroup;
+			children = (
+				84E3A87D1D0883870065FD5A /* MusixmatchLyricsAction.h */,
+				84E3A87F1D0883870065FD5A /* Info.plist */,
+			);
+			path = MusixmatchLyricsAction;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		84E3A8781D0883870065FD5A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E3A87E1D0883870065FD5A /* MusixmatchLyricsAction.h in Headers */,
+				84E3A8891D08844A0065FD5A /* MXMLyricsAction.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		61FAAD8D1A0108E10063206F /* MXMLyricsActionDemo */ = {
@@ -118,15 +187,35 @@
 				61FAAD8A1A0108E10063206F /* Sources */,
 				61FAAD8B1A0108E10063206F /* Frameworks */,
 				61FAAD8C1A0108E10063206F /* Resources */,
+				84E3A8871D0883870065FD5A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				84E3A8811D0883870065FD5A /* PBXTargetDependency */,
 			);
 			name = MXMLyricsActionDemo;
 			productName = MXMLyricsActionDemo;
 			productReference = 61FAAD8E1A0108E10063206F /* Lyrics Extension.app */;
 			productType = "com.apple.product-type.application";
+		};
+		84E3A87A1D0883870065FD5A /* MusixmatchLyricsAction */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84E3A8861D0883870065FD5A /* Build configuration list for PBXNativeTarget "MusixmatchLyricsAction" */;
+			buildPhases = (
+				84E3A8761D0883870065FD5A /* Sources */,
+				84E3A8771D0883870065FD5A /* Frameworks */,
+				84E3A8781D0883870065FD5A /* Headers */,
+				84E3A8791D0883870065FD5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MusixmatchLyricsAction;
+			productName = MusixmatchLyricsAction;
+			productReference = 84E3A87B1D0883870065FD5A /* MusixmatchLyricsAction.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -139,6 +228,10 @@
 				TargetAttributes = {
 					61FAAD8D1A0108E10063206F = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = DL6BZH9493;
+					};
+					84E3A87A1D0883870065FD5A = {
+						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = DL6BZH9493;
 					};
 				};
@@ -157,6 +250,7 @@
 			projectRoot = "";
 			targets = (
 				61FAAD8D1A0108E10063206F /* MXMLyricsActionDemo */,
+				84E3A87A1D0883870065FD5A /* MusixmatchLyricsAction */,
 			);
 		};
 /* End PBXProject section */
@@ -172,6 +266,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84E3A8791D0883870065FD5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -180,13 +281,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				61FAAD971A0108E10063206F /* AppDelegate.m in Sources */,
-				61FAADBF1A011EA50063206F /* MXMLyricsAction.m in Sources */,
 				8427B4401AD6B36C009DB474 /* ViewController.m in Sources */,
 				61FAAD941A0108E10063206F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84E3A8761D0883870065FD5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E3A8881D0883A40065FD5A /* MXMLyricsAction.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84E3A8811D0883870065FD5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84E3A87A1D0883870065FD5A /* MusixmatchLyricsAction */;
+			targetProxy = 84E3A8801D0883870065FD5A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		61BD2FAE1B064E6B00964CD1 /* Launch Screen.xib */ = {
@@ -298,16 +414,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				BUILDNUMBER = 2015092500;
-				BUILDVERSION = 1.1.1;
+				BUILDNUMBER = 2016060800;
+				BUILDVERSION = 1.1.3;
 				BUNDLEID = com.musixmatch.samples.extension;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Loreto Parisi (HFX54548Y7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Loreto Parisi (HFX54548Y7)";
 				INFOPLIST_FILE = MXMLyricsActionDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLEID)";
 				PRODUCT_NAME = "Lyrics Extension";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "26e4e6de-c8da-4e51-b4fa-e51d0721d8b2";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 			};
@@ -318,18 +436,76 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				BUILDNUMBER = 2015092500;
-				BUILDVERSION = 1.1.1;
+				BUILDNUMBER = 2016060800;
+				BUILDVERSION = 1.1.3;
 				BUNDLEID = com.musixmatch.samples.extension.enterprise;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: MUSIXMATCH SPA";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MUSIXMATCH SPA";
 				INFOPLIST_FILE = MXMLyricsActionDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLEID)";
 				PRODUCT_NAME = "Lyrics Extension";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "4341090b-f8dc-49ab-bdf4-8fa6e73caaa2";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
+			};
+			name = Release;
+		};
+		84E3A8841D0883870065FD5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Loreto Parisi (HFX54548Y7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Loreto Parisi (HFX54548Y7)";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = MusixmatchLyricsAction/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.musixmatch.MusixmatchLyricsAction;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		84E3A8851D0883870065FD5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: MUSIXMATCH SPA";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MUSIXMATCH SPA";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = MusixmatchLyricsAction/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.musixmatch.MusixmatchLyricsAction;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -353,6 +529,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		84E3A8861D0883870065FD5A /* Build configuration list for PBXNativeTarget "MusixmatchLyricsAction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E3A8841D0883870065FD5A /* Debug */,
+				84E3A8851D0883870065FD5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

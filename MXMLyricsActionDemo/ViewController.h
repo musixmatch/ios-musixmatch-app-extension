@@ -11,8 +11,6 @@
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
 
-#import "MXMLyricsAction.h"
-
 @interface ViewController : UIViewController {
     
     IBOutlet UIImageView *artWork;
