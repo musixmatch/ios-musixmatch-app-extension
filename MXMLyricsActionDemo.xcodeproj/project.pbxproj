@@ -229,10 +229,12 @@
 					61FAAD8D1A0108E10063206F = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = DL6BZH9493;
+						ProvisioningStyle = Automatic;
 					};
 					84E3A87A1D0883870065FD5A = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = DL6BZH9493;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -419,13 +421,13 @@
 				BUNDLEID = com.musixmatch.samples.extension;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Loreto Parisi (HFX54548Y7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Loreto Parisi (HFX54548Y7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MXMLyricsActionDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLEID)";
 				PRODUCT_NAME = "Lyrics Extension";
-				PROVISIONING_PROFILE = "26e4e6de-c8da-4e51-b4fa-e51d0721d8b2";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 			};
@@ -441,13 +443,13 @@
 				BUNDLEID = com.musixmatch.samples.extension.enterprise;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: MUSIXMATCH SPA";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MUSIXMATCH SPA";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MXMLyricsActionDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLEID)";
 				PRODUCT_NAME = "Lyrics Extension";
-				PROVISIONING_PROFILE = "4341090b-f8dc-49ab-bdf4-8fa6e73caaa2";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 			};
@@ -458,7 +460,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Loreto Parisi (HFX54548Y7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Loreto Parisi (HFX54548Y7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -486,7 +488,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: MUSIXMATCH SPA";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MUSIXMATCH SPA";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -537,6 +539,7 @@
 				84E3A8851D0883870065FD5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
